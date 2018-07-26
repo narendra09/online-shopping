@@ -20,8 +20,8 @@
                     </li>
             
             
-            <li class="nav-item">
-              <a class="nav-link" href="${contextRoot }/listofproducts">Listofproducts</a>
+            <li id="allproducts">
+              <a class="nav-link" href="${contextRoot }/show/all/products">View Products</a>
             </li>
             
             

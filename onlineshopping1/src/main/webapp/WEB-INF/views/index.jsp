@@ -21,11 +21,14 @@
     <title>online shopping-${title}</title>
     <script type="text/javascript">
     window.menu = '${title}';
+    window.contextRoot='${contextRoot}';
     </script>
 
     <!-- Bootstrap core CSS -->
     <link href="${css}/bootstrap.min.css" rel="stylesheet">
     <link href="${css}/bootstrap-readable-theme.css" rel="stylesheet">
+    
+       <link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="${css}/myapp.css" rel="stylesheet">
@@ -49,6 +52,14 @@
     <c:if test="${userClickContact==true }">
     <%@include file="contact.jsp" %>
     </c:if>
+    
+     <c:if test="${userClickShowProduct==true }">
+    <%@include file="singleProduct.jsp" %>
+    </c:if>
+    
+     <c:if test="${userClickAllProducts==true || userClickCategoryProducts==true}">
+    <%@include file="listproducts.jsp" %>
+    </c:if>
 
     <!-- Footer -->
   <%@include file="./shared/footer.jsp" %>
@@ -56,6 +67,8 @@
     <!-- Bootstrap core JavaScript -->
     <script src="${js}/jquery.js"></script>
     <script src="${js}/bootstrap.min.js"></script>
+    <script src="${js}/jquery.dataTables.js"></script>
+      <script src="${js}/dataTables.bootstrap.js"></script>
     
     <!-- -selfcoded -->
     <script src="${js }/myapp.js"></script>
