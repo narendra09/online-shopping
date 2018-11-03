@@ -2,86 +2,79 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.nari</groupId>
-  <artifactId>onlineshopping1</artifactId>
+  <artifactId>onlineshopping</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>onlineshopping1 Maven Webapp</name>
+  <name>onlineshopping Maven Webapp</name>
   <url>http://maven.apache.org</url>
+<properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+</properties>
   <dependencies>
-  <!-- linking backend project -->
-  <dependency>
+ 
+		<!-- Link backend project -->
+		  <dependency>
     <groupId>com.nari</groupId>
   <artifactId>onlinebackend</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   </dependency>
+ 
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
+      <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+<!-- SPRING -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>4.3.6.RELEASE</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
     
+     <!-- spring dependency -->
     <dependency>
-    <groupId>ch.qos.logback</groupId>
-    <artifactId>logback-classic</artifactId>
-    <version>1.2.1</version>
-    <scope>test</scope>
-</dependency>
-
-<!-- https://mvnrepository.com/artifact/org.slf4j/jcl-over-slf4j -->
-<dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>jcl-over-slf4j</artifactId>
-    <version>1.7.24</version>
-</dependency>
-    
-    <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
-<dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-webmvc</artifactId>
     <version>4.3.6.RELEASE</version>
 </dependency>
-    
-    <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
-<dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-core</artifactId>
-    <version>4.3.6.RELEASE</version>
-    <exclusions>
-    <exclusion>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
-        </exclusion>
-    </exclusions>
-</dependency>
+<!-- JSTL -->
 
-  <!-- jstl -->
-    <dependency>
-        <groupId>javax.servlet</groupId>
-        <artifactId>jstl</artifactId>
-        <version>1.2</version>
-    </dependency> 
-    
-    <!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/javax.servlet.jsp.jstl-api -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+<!-- https://mvnrepository.com/artifact/javax.servlet/jsp-api -->
 <dependency>
-    <groupId>javax.servlet.jsp.jstl</groupId>
-    <artifactId>javax.servlet.jsp.jstl-api</artifactId>
-    <version>1.2.1</version>
-</dependency>
-    
-    <!-- https://mvnrepository.com/artifact/javax.servlet.jsp/jsp-api -->
-<dependency>
-    <groupId>javax.servlet.jsp</groupId>
+    <groupId>javax.servlet</groupId>
     <artifactId>jsp-api</artifactId>
-    <version>2.1</version>
+    <version>2.0</version>
     <scope>provided</scope>
 </dependency>
-    
 
-    
-    
+
+
   </dependencies>
   <build>
-    <finalName>onlineshopping1</finalName>
+  <plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+    <finalName>onlineshopping</finalName>
   </build>
 </project>

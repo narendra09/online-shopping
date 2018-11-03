@@ -22,7 +22,7 @@ public class PageController {
 	
     @Autowired
     private ProductDao productDAo;
-		@RequestMapping("/index")
+		@RequestMapping(value={"/","/index"})
 	public String index(ModelMap map)
 	{
 			logger.info("inside indexmethod-INFO");
